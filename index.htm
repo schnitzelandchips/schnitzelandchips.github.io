@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fire UI CSS -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@fire-ui/fire-ui@0.2.2/FireUI.min.css">
+    <!-- Fire UI Javascript -->
+    <script src="https://unpkg.com/@fire-ui/fire-ui@0.2.2/FireUI.min.js"></script>
+    <title>SNITZ!</title>
+</head>
+
+<body data-theme="teal">
+    <center>
+    <div class="tab" data-tab="exampleTab">
+        
+        <button class="tab-btn ce btn-dark" data-content="English">English</button>
+        <button class="tab-btn btn-dark" data-content="Hebrew">Hebrew</button>
+        <button class="tab-btn btn-dark" data-content="cpp">C++</button>
+        <button class="tab-btn btn-dark" data-content="c">C</button>
+    </div>
+    </center>
+    <div class="tab-contents" id="exampleTab">
+        <div id="English" class="tab-content tab-content-active">
+            <center>
+            <h1>Schnitzel</h1>
+            </center>
+        </div>
+        <div id="cpp" class="theme-adjust tab-content">
+                <pre data-copyable="false" class="theme-adjust ">
+                    <code style="font-size: 22px;"class="theme-adjust ">
+                    #include &#x3C;iostream&#x3E;
+                    void main()
+                    {
+                        std::cout << "schnitzel" << std::endl;
+                    }
+                    </code>
+                </pre>
+        </div>
+        <div id="c" class="theme-adjust tab-content">
+            <pre data-copyable="false" class="theme-adjust ">
+                            <code style="font-size: 22px;"class="theme-adjust ">
+                            #include &#x3C;stdio&#x3E;
+                            void main()
+                            {
+                                printf("Schnitzel");
+                            }
+                            </code>
+                        </pre>
+        </div>
+    </div>
+</body>
+
+</html>
