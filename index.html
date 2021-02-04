@@ -13,16 +13,15 @@
 </head>
 
 <body data-theme="teal">
-    <center>
     <div class="tab" data-tab="exampleTab">
         
-        <button class="tab-btn ce btn-dark" data-content="English">English</button>
-        <button class="tab-btn btn-dark" data-content="Hebrew">Hebrew</button>
-        <button class="tab-btn btn-dark" data-content="cpp">C++</button>
-        <button class="tab-btn btn-dark" data-content="c">C</button>
+        <button class="tab-btn btn-dark mr-3 pl-3 pr-3" style="font-size: 1.8rem" data-content="English">English</button>
+        <button class="tab-btn btn-dark mr-3 pl-3 pr-3" style="font-size: 1.8rem" data-content="Hebrew">Hebrew</button>
+        <button class="tab-btn btn-dark mr-3 pl-3 pr-3" style="font-size: 1.8rem" data-content="cpp">C++</button>
+        <button class="tab-btn btn-dark mr-3 pl-3 pr-3" style="font-size: 1.8rem" data-content="c">C</button>
+        <button class="tab-btn btn-dark pl-3 pr-3" style="float: right;font-size: 1.8rem" id="rnd" data-content="" onClick=randomTab()>Random</button>
     </div>
-    </center>
-    <div class="tab-contents" id="exampleTab">
+    <div class="tab-contents" id="exampleTab" style="font-size: 2rem;">
         <div id="English" class="tab-content tab-content-active">
             <center>
             <h1>Schnitzel</h1>
@@ -34,28 +33,41 @@
             </center>
         </div>
         <div id="cpp" class="theme-adjust tab-content">
-                <pre data-copyable="false" class="theme-adjust ">
-                    <code style="font-size: 22px;"class="theme-adjust ">
+                <pre data-copyable="false" class="theme-adjust">
+                    <code style="font-size: 2rem;line-height: 1;" class="theme-adjust pb-5">
                     #include &#x3C;iostream&#x3E;
+                    
                     void main()
                     {
-                        std::cout << "schnitzel" << std::endl;
+                        std::cout << "Schnitzel" << std::endl;
                     }
                     </code>
                 </pre>
         </div>
         <div id="c" class="theme-adjust tab-content">
-            <pre data-copyable="false" class="theme-adjust ">
-                            <code style="font-size: 22px;"class="theme-adjust ">
-                            #include &#x3C;stdio&#x3E;
-                            void main()
-                            {
-                                printf("Schnitzel");
-                            }
-                            </code>
-                        </pre>
+            <pre data-copyable="false" class="theme-adjust">
+                <code style="font-size: 2rem;line-height: 1;" class="theme-adjust pb-5">
+                #include &#x3C;stdio&#x3E;
+
+                void main()
+                {
+                    printf("Schnitzel");
+                }
+                </code>
+            </pre>
         </div>
     </div>
+    <script>
+        let tabContentList = document.querySelectorAll(".tab-content");
+        function randomTab() 
+        {
+            var rnd_tab = tabContentList[Math.floor(Math.random() * tabContentList.length)].id;
+            while (rnd_tab === document.getElementById("rnd").dataset.content)  {
+                rnd_tab = tabContentList[Math.floor(Math.random() * tabContentList.length)].id;
+            }
+            document.getElementById("rnd").dataset.content = rnd_tab;
+        }
+    </script>
 </body>
 
 </html>
