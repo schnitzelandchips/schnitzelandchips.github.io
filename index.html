@@ -20,6 +20,7 @@
         <button class="tab-btn btn-dark mr-3 pl-3 pr-3" style="font-size: 1.8rem" data-content="Japanese">Japanese</button>
         <button class="tab-btn btn-dark mr-3 pl-3 pr-3" style="font-size: 1.8rem" data-content="cpp">C++</button>
         <button class="tab-btn btn-dark mr-3 pl-3 pr-3" style="font-size: 1.8rem" data-content="c">C</button>
+        <button class="tab-btn btn-dark mr-3 pl-3 pr-3" style="font-size: 1.8rem" data-content="asm8086">Assembly 8086</button>
         <button class="tab-btn btn-dark pl-3 pr-3" style="float: right;font-size: 1.8rem" id="rnd" data-content="" onClick=randomTab()>Random</button>
     </div>
     <div class="tab-contents" id="exampleTab" style="font-size: 2rem;">
@@ -65,6 +66,25 @@ void main()
 {
     printf("Schnitzel");
 }
+</code>
+            </pre>
+        </div>
+        <div id="asm8086" class="theme-adjust tab-content">
+            <pre data-copyable="true" class="theme-adjust">
+<code style="font-size: 2rem;line-height: 1;" class="theme-adjust pb-5">
+.stack 100h
+
+.data
+schnitzel db 'Schnitzel$'
+
+.code
+mov ax,@data
+mov ds,ax
+lea dx, schnitzel
+mov ah, 9
+int 21h
+mov ax,4c00h
+int 21h
 </code>
             </pre>
         </div>
